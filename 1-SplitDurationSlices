@@ -23,15 +23,27 @@ import random
 # Step 1: Load the files
 folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 
+
 # Attetnion! notice the length of the dwell slices
 # 30 Sec
-output_path = "/workspaces/VAT-Processing/Duration_Slices/30"
-# # 15 Sec
-# output_path = "/Duration_Slices/15"
-# # 10 Sec
-# output_path = "/Duration_Slices/10"
-# # 5 Sec
-# output_path = "/Duration_Slices/5"
+# output_path = "/workspaces/VAT-Processing/Duration_Slices/30"
+# LENGTH = 30
+
+# 15 Sec
+# output_path = "/workspaces/VAT-Processing/Duration_Slices/15"
+# LENGTH = 15
+
+# 10 Sec
+# output_path = "/workspaces/VAT-Processing/Duration_Slices/10"
+# LENGTH = 10
+
+# 5 Sec
+output_path = "/workspaces/VAT-Processing/Duration_Slices/5"
+LENGTH = 5
+
+# Slice duartion calculation
+DUR = LENGTH * 1000 # MSec
+SUB_DUR =  DUR * 0.6 # Sub duration for calculating the shortest 
 
 
 files = os.listdir(folder_path)
@@ -97,14 +109,14 @@ for file in files:
         # print("dwell_end_time_list",dwell_end_time_list)
         # print("dwell duration", dwell_durations)
 
-        # Step 5: Separate dwells into 30-second slices
+        # Step 5: Separate dwells into DUR slices
         slices = []
         slice_start_time = dwell_start_time_list[0]
         slice_dwell_list = []
         slice_durations_list = []
         for i in range(len(dwell_start_time_list)):
-            if (slice_start_time + 30000) <= dwell_end_time_list[i]:
-                if (slice_start_time + 30000) - dwell_start_time_list[i] >= dwell_end_time_list[i] - (slice_start_time + 30000):
+            if (slice_start_time + DUR) <= dwell_end_time_list[i]:
+                if (slice_start_time + DUR) - dwell_start_time_list[i] >= dwell_end_time_list[i] - (slice_start_time + DUR):
                     slice_dwell_list.append(dwell_list[i])
                     slice_durations_list.append(dwell_end_time_list[i] - dwell_start_time_list[i])
                     slices.append((slice_dwell_list, slice_durations_list))
@@ -122,10 +134,10 @@ for file in files:
                 slice_dwell_list.append(dwell_list[i])
                 slice_durations_list.append(dwell_durations[i])
 
-        print("slice:",slice)
+
 
         # Check the last slice duration
-        if sum(slice_durations_list) < 20000:
+        if dwell_end_time_list[i] - slice_start_time < SUB_DUR:
             slices.pop()
 
         # Step 6: Save each slice as a file
