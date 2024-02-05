@@ -1,3 +1,7 @@
+# This is the 1st step: to split the origincal sample files (pre-processed and label) into slices
+# Slices have different length/ durations
+# The dutation of the slices have not been binned yet
+
 import numpy as np
 import pandas as pd
 from pandas.io.common import dataclasses
@@ -5,29 +9,16 @@ import os
 import json
 import random
 
-# # Assuming the script is in the root directory of the repository
-# folder_path = "Original Sample (40)"  # Relative path
-# output_path = "Duration_Slices/30"
-
-# print("Current Working Directory:", os.getcwd())
-# print("Listing files in:", folder_path)
-
-# files = os.listdir(folder_path)
-
-# for file in files:
-#     file_path = os.path.join(folder_path, file)
-#     print("Reading file:", file_path)
-#     df = pd.read_excel(file_path)
-
 
 # Step 1: Load the files
 folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 
-
-# Attetnion! notice the length of the dwell slices
-# 30 Sec
-# output_path = "/workspaces/VAT-Processing/Duration_Slices/30"
-# LENGTH = 30
+## Attetnion!
+# notice the length of the dwell slices
+## Attetnion!
+# 20 Sec
+output_path = "/workspaces/VAT-Processing/Duration_Slices/20"
+LENGTH = 20
 
 # 15 Sec
 # output_path = "/workspaces/VAT-Processing/Duration_Slices/15"
@@ -38,8 +29,8 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 # LENGTH = 10
 
 # 5 Sec
-output_path = "/workspaces/VAT-Processing/Duration_Slices/5"
-LENGTH = 5
+# output_path = "/workspaces/VAT-Processing/Duration_Slices/5"
+# LENGTH = 5
 
 # Slice duartion calculation
 DUR = LENGTH * 1000 # MSec
