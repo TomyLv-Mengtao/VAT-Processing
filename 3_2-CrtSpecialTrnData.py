@@ -10,10 +10,10 @@ import random
 
 # Define the paths
 ######### Caution the time setting
-pos_path = '/workspaces/VAT-Processing/Traces/Pos/20'
-neg_path = '/workspaces/VAT-Processing/Traces/Neg/20'
-# output_path = '/workspaces/VAT-Processing/V3TrnSet/All2All/5'
-output_path = '/workspaces/VAT-Processing/V3TrnSet/All2One/20'
+pos_path = '/workspaces/VAT-Processing/Traces/Pos/5'
+neg_path = '/workspaces/VAT-Processing/Traces/Neg/5'
+output_path = '/workspaces/VAT-Processing/5Sec/All-1'
+# output_path = '/workspaces/VAT-Processing/V3TrnSet/All2One/20'
 
 # # Get all the JSON files in the directories
 # pos_files = [os.path.join(pos_path, f) for f in os.listdir(pos_path) if f.endswith('.json')]
@@ -35,13 +35,15 @@ def create_samples(files, key):
     selected_files = random.sample(files, k = Sample_Num)  # Use choices instead of sample for replacement
     # Split into training and test files
 
-    # All2All data samples
-    training_files = selected_files
-    test_files = selected_files
-    
+
+    # # All2All data samples
+    # training_files = selected_files
+    # test_files = selected_files
+
     # All2One data samples, Use all to train, select 10% to test
     training_files = selected_files
     test_files = selected_files[trn_Num:]
+
 
     # Print selected file names
     # print(f'Selected files for {key} training: {training_files}')
@@ -56,7 +58,7 @@ def create_samples(files, key):
 vocab = ["alt", "att", "spd", "vsp", "otw", "nos", "oth", "a", "b", "c", "d","e"]
 
 # Loop 10 times
-for i in range(10):
+for i in range(50):
     print(f'Loop {i+1}')
     # Create positive samples
     pos_training_sample, pos_test_sample = create_samples(pos_files, 'traces_pos')
