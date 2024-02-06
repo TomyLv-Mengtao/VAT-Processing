@@ -58,7 +58,7 @@ def create_samples(files, key):
 vocab = ["alt", "att", "spd", "vsp", "otw", "nos", "oth", "a", "b", "c", "d","e"]
 
 # Loop 10 times
-for i in range(50):
+for i in range(10):
     print(f'Loop {i+1}')
     # Create positive samples
     pos_training_sample, pos_test_sample = create_samples(pos_files, 'traces_pos')
