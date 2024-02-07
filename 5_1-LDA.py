@@ -1,6 +1,5 @@
-# Evaluate the performance of VAT with LDA method
-
-
+# Step 5. method 1, Evaluate the performance of VAT with LDA method
+# 2024-02-06
 import glob
 import pandas as pd
 import numpy as np
