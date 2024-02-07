@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 # Load data
-pos_files = glob.glob("/workspaces/VAT-processing/ML/Pos/15/*.csv")
+pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/15/*.csv")
 neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/15/*.csv")
 
 # Read the files and assign labels
@@ -52,6 +52,6 @@ for train_index, test_index in kf.split(X):
     recall.append(recall_score(y_test, predictions))
 
 # Print the results
-print(f'Accuracy: {np.mean(accuracy)}')
-print(f'Precision: {np.mean(precision)}')
-print(f'Recall: {np.mean(recall)}')
+print(f'Accuracy: {np.mean(accuracy):.3f}')
+print(f'Precision: {np.mean(precision):.3f}')
+print(f'Recall: {np.mean(recall):.3f}')
