@@ -1,5 +1,5 @@
 # Step 5. method 1, Evaluate the performance of VAT with LDA method
-# 2024-02-06
+# 2024-02-07
 import glob
 import pandas as pd
 import numpy as np
@@ -10,8 +10,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 # Load data
-pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/15/*.csv")
-neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/15/*.csv")
+pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/5/*.csv")
+neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/5/*.csv")
 
 # Read the files and assign labels
 pos_data = [pd.read_csv(file).assign(target='pos') for file in pos_files]

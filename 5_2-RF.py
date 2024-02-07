@@ -1,5 +1,5 @@
 # Step 5. method 2, Evaluate the performance of VAT with RF method
-# 2024-02-06
+# 2024-02-07
 import glob
 import pandas as pd
 import numpy as np
@@ -10,8 +10,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
 # Load data
-pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/20/*.csv")
-neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/20/*.csv")
+pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/5/*.csv")
+neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/5/*.csv")
 
 pos_data = [pd.read_csv(file) for file in pos_files]
 neg_data = [pd.read_csv(file) for file in neg_files]
