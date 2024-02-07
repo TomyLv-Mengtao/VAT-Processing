@@ -27,14 +27,21 @@ def process_files(input_folder, output_folder):
             if f'dwell_{category}' not in df_encoded.columns:
                 df_encoded[f'dwell_{category}'] = 0
 
+        # Convert boolean values to integers. Otherwise, it will be "TURE" and "FALSE", instead of "1" and "0"
+        for category in categories:
+            df_encoded[f'dwell_{category}'] = df_encoded[f'dwell_{category}'].astype(int)
+
         # Reorder the columns to ensure they are always in the same sequence
         df_encoded = df_encoded[['duration'] + [f'dwell_{category}' for category in categories]]
 
+        # Remove the extension from the filename
+        filename_without_extension = os.path.splitext(filename)[0]
+
         # Save the processed DataFrame to the output folder with the same filename
-        df_encoded.to_excel(os.path.join(output_folder, filename), index=False)
+        df_encoded.to_csv(os.path.join(output_folder, filename_without_extension + ".csv"), index=False)
 
 # Process the positive and negative examples
 # Pos path
-process_files("/workspaces/VAT-Processing/Duration_Slices/5/Pos", "/workspaces/VAT-Processing/ML/Pos/5")
+process_files("/workspaces/VAT-Processing/Duration_Slices/15/Pos", "/workspaces/VAT-Processing/ML/Pos/15")
 # Neg path
-process_files("/workspaces/VAT-Processing/Duration_Slices/5/Neg", "/workspaces/VAT-Processing/ML/Neg/5")
+process_files("/workspaces/VAT-Processing/Duration_Slices/15/Neg", "/workspaces/VAT-Processing/ML/Neg/15")
