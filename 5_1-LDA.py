@@ -10,8 +10,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 # Load data
-pos_files = glob.glob("/content/drive/My Drive/Colab Notebooks/Done/Dwell time origin/ML_input/Pos/*.xlsx")
-neg_files = glob.glob("/content/drive/My Drive/Colab Notebooks/Done/Dwell time origin/ML_input/Neg/*.xlsx")
+pos_files = glob.glob("/workspace/VAT-processing/ML/Pos/5/*.xlsx")
+neg_files = glob.glob("/workspace/VAT-processing/ML/Neg/5/*.xlsx")
 
 # Read the files and assign labels
 pos_data = [pd.read_excel(file).assign(target='pos') for file in pos_files]
