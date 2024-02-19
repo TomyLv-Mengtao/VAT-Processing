@@ -10,10 +10,10 @@ import random
 
 # Define the paths
 ######### Caution the time setting
-pos_path = '/workspaces/VAT-Processing/Traces/Pos/5'
-neg_path = '/workspaces/VAT-Processing/Traces/Neg/5'
-output_path = '/workspaces/VAT-Processing/5Sec/All-1'
-# output_path = '/workspaces/VAT-Processing/V3TrnSet/All2One/20'
+pos_path = '/workspaces/VAT-Processing/Traces/Pos/25'
+neg_path = '/workspaces/VAT-Processing/Traces/Neg/25'
+# output_path = '/workspaces/VAT-Processing/5Sec/All-1'
+output_path = '/workspaces/VAT-Processing/V3TrnSet/All2All/25'
 
 # # Get all the JSON files in the directories
 # pos_files = [os.path.join(pos_path, f) for f in os.listdir(pos_path) if f.endswith('.json')]
@@ -36,13 +36,14 @@ def create_samples(files, key):
     # Split into training and test files
 
 
-    # # All2All data samples
-    # training_files = selected_files
-    # test_files = selected_files
-
-    # All2One data samples, Use all to train, select 10% to test
+    # All2All data samples
+    
     training_files = selected_files
-    test_files = selected_files[trn_Num:]
+    test_files = selected_files
+
+    # # All2One data samples, Use all to train, select 10% to test
+    # training_files = selected_files
+    # test_files = selected_files[trn_Num:]
 
 
     # Print selected file names
