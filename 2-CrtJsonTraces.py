@@ -38,13 +38,19 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 # pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/10"
 # neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/10"
 
-# 5 Sec
-pos_path = "/workspaces/VAT-Processing/Duration_Slices/5/Pos"
-neg_path = "/workspaces/VAT-Processing/Duration_Slices/5/Neg"
+# # 5 Sec
+# pos_path = "/workspaces/VAT-Processing/Duration_Slices/5/Pos"
+# neg_path = "/workspaces/VAT-Processing/Duration_Slices/5/Neg"
 
-pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/5"
-neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/5"
+# pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/5"
+# neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/5"
 
+# 25 Sec
+pos_path = "/workspaces/VAT-Processing/Duration_Slices/25/Pos"
+neg_path = "/workspaces/VAT-Processing/Duration_Slices/25/Neg"
+
+pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/25"
+neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/25"
 
 
 # Get a list of all files in the directory
