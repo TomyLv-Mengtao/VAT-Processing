@@ -45,12 +45,12 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 # pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/5"
 # neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/5"
 
-# 25 Sec
-pos_path = "/workspaces/VAT-Processing/Duration_Slices/25/Pos"
-neg_path = "/workspaces/VAT-Processing/Duration_Slices/25/Neg"
+# 35 Sec
+pos_path = "/workspaces/VAT-Processing/Duration_Slices/35/Pos"
+neg_path = "/workspaces/VAT-Processing/Duration_Slices/35/Neg"
 
-pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/25"
-neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/25"
+pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/35"
+neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/35"
 
 
 # Get a list of all files in the directory

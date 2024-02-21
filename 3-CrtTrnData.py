@@ -29,10 +29,10 @@ import random
 # neg_path = '/workspaces/VAT-Processing/Traces/Neg/5'
 # output_path = '/workspaces/VAT-Processing/5Sec/9-1'
 
-# 5 Sec
-pos_path = '/workspaces/VAT-Processing/Traces/Pos/25'
-neg_path = '/workspaces/VAT-Processing/Traces/Neg/25'
-output_path = '/workspaces/VAT-Processing/Training_Set/25'
+# 35 Sec
+pos_path = '/workspaces/VAT-Processing/Traces/Pos/35'
+neg_path = '/workspaces/VAT-Processing/Traces/Neg/35'
+output_path = '/workspaces/VAT-Processing/Training_Set/35'
 
 # # Get all the JSON files in the directories
 # pos_files = [os.path.join(pos_path, f) for f in os.listdir(pos_path) if f.endswith('.json')]

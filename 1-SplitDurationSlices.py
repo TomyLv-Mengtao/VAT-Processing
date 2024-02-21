@@ -17,7 +17,7 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 # notice the length of the dwell slices
 ## Attetnion!
 # 35 Sec
-output_path = "/workspaces/VAT-Processing/Duration_Slices/35"
+output_path = "/workspaces/VAT-Processing/Duration_Slices/35/Neg"
 LENGTH = 35
 
 # 15 Sec
@@ -135,9 +135,17 @@ for file in files:
         for j, (slice_dwells, slice_durations) in enumerate(slices):
             df_slice = pd.DataFrame({'dwell': slice_dwells, 'duration': slice_durations})
 
-            if df['Mode'][0] == 'SAP':
+            # if df['Mode'][0] == 'SAP':
+            #     filename = f'pos_{file_name}_{k}_{j}.xlsx'
+            # else:
+            #     filename = f'neg_{file_name}_{k}_{j}.xlsx'
+
+            # 正负相反
+            if df['Mode'][0] == 'AP':
                 filename = f'pos_{file_name}_{k}_{j}.xlsx'
             else:
                 filename = f'neg_{file_name}_{k}_{j}.xlsx'
+
+
 
             df_slice.to_excel(os.path.join(output_path, filename), index=False)
