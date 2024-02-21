@@ -16,9 +16,9 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 ## Attetnion!
 # notice the length of the dwell slices
 ## Attetnion!
-# 20 Sec
-output_path = "/workspaces/VAT-Processing/Duration_Slices/25"
-LENGTH = 25
+# 35 Sec
+output_path = "/workspaces/VAT-Processing/Duration_Slices/35"
+LENGTH = 35
 
 # 15 Sec
 # output_path = "/workspaces/VAT-Processing/Duration_Slices/15"
