@@ -10,8 +10,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 # Load data
-pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/20/*.csv")
-neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/20/*.csv")
+pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/25/*.csv")
+neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/25/*.csv")
 
 # Read the files and assign labels
 pos_data = [pd.read_csv(file).assign(target='pos') for file in pos_files]
