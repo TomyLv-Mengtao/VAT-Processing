@@ -18,7 +18,7 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 ## Attetnion!
 
 # 30 Sec
-output_path = "/workspaces/VAT-Processing/Duration_Slices/30"
+output_path = "/workspaces/VAT-Processing/Duration_Slices"
 LENGTH = 30
 
 # # 35 Sec
