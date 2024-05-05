@@ -10,8 +10,8 @@ from sklearn.preprocessing import LabelEncoder
 from lightgbm import LGBMClassifier
 
 # Load data
-pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/25/*.csv")
-neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/25/*.csv")
+pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/55/*.csv")
+neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/55/*.csv")
 print("Duration: 25")
 
 pos_data = [pd.read_csv(file) for file in pos_files]
