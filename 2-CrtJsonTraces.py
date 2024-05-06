@@ -70,6 +70,11 @@ def process_file(file, path, save_path, key):
 
     # Iterate over each row in the DataFrame
     # Bin the dwell times
+    # By 25iles: 100; 241; 491; 1052
+    # By Ln: Ln4.6 = 99.5; Ln 5.6 = 270.4; Ln 6.6 = 735.1; Ln7.6 = 1998.2
+    # By GMM (Gaussian mixture model): 100, 525.6; 1728.5; 5832.5
+    # By K-Means: 100, 1734, 6011, 17531
+    
     for _, row in df.iterrows():
         # Determine the second value based on the duration
         if row['duration'] < 100:
