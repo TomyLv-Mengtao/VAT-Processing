@@ -70,24 +70,68 @@ def process_file(file, path, save_path, key):
 
     # Iterate over each row in the DataFrame
     # Bin the dwell times
-    # By 25iles: 100; 241; 491; 1052
-    # By Ln: Ln4.6 = 99.5; Ln 5.6 = 270.4; Ln 6.6 = 735.1; Ln7.6 = 1998.2
-    # By GMM (Gaussian mixture model): 100, 525.6; 1728.5; 5832.5
-    # By K-Means: 100, 1734, 6011, 17531
     
+    ## By 25iles: 100; 241; 491; 1052
+    # # 25iles
+    # for _, row in df.iterrows():
+    #     # Determine the second value based on the duration
+    #     if row['duration'] < 100:
+    #         second_value = 'a'
+    #     elif row['duration'] < 241:
+    #         second_value = 'b'
+    #     elif row['duration'] < 491:
+    #         second_value = 'c'
+    #     elif row['duration'] < 1052:
+    #         second_value = 'd'
+    #     else:
+    #         second_value = 'e'
+    
+    # By Ln: Ln4.6 = 99.5; Ln 5.6 = 270.4; Ln 6.6 = 735.1; Ln7.6 = 1998.2
+    # Ln
     for _, row in df.iterrows():
         # Determine the second value based on the duration
         if row['duration'] < 100:
             second_value = 'a'
-        elif row['duration'] < 241:
+        elif row['duration'] < 270.4:
             second_value = 'b'
-        elif row['duration'] < 491:
+        elif row['duration'] < 735.1:
             second_value = 'c'
-        elif row['duration'] < 1052:
+        elif row['duration'] < 1998.2:
             second_value = 'd'
         else:
             second_value = 'e'
+    
+    # # By GMM (Gaussian mixture model): 100, 525.6; 1728.5; 5832.5   
+    # # GMM
+    # for _, row in df.iterrows():
+    #     # Determine the second value based on the duration
+    #     if row['duration'] < 100:
+    #         second_value = 'a'
+    #     elif row['duration'] < 525.6:
+    #         second_value = 'b'
+    #     elif row['duration'] < 1728.5:
+    #         second_value = 'c'
+    #     elif row['duration'] < 5832.5:
+    #         second_value = 'd'
+    #     else:
+    #         second_value = 'e'
+            
+    # # By K-Means: 100, 1734, 6011, 17531     
+    # # K-Means
+    # for _, row in df.iterrows():
+    #     # Determine the second value based on the duration
+    #     if row['duration'] < 100:
+    #         second_value = 'a'
+    #     elif row['duration'] < 1735:
+    #         second_value = 'b'
+    #     elif row['duration'] < 6012:
+    #         second_value = 'c'
+    #     elif row['duration'] < 17532:
+    #         second_value = 'd'
+    #     else:
+            second_value = 'e'
 
+        
         # Add the dwell and its second value to the results list
         results.append([row['dwell'], second_value])
 
