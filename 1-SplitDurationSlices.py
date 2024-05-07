@@ -17,29 +17,9 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 # notice the length of the dwell slices
 ## Attetnion!
 
-# 80 Sec
-output_path = "/workspaces/VAT-Processing/Duration_Slices/80/Neg"
-LENGTH = 80
-
-# # 75 Sec
-# output_path = "/workspaces/VAT-Processing/Duration_Slices/75/Neg"
-# LENGTH = 75
-
-# # 35 Sec
-# output_path = "/workspaces/VAT-Processing/Duration_Slices/35/Neg"
-# LENGTH = 35
-
-# # 30 Sec
-# output_path = "/workspaces/VAT-Processing/Duration_Slices"
-# LENGTH = 30
-
-# 15 Sec
-# output_path = "/workspaces/VAT-Processing/Duration_Slices/15"
-# LENGTH = 15
-
-# 10 Sec
-# output_path = "/workspaces/VAT-Processing/Duration_Slices/10"
-# LENGTH = 10
+# 75 Sec
+output_path = "/workspaces/VAT-Processing/Duration_Slices/75/Neg"
+LENGTH = 75
 
 # 5 Sec
 # output_path = "/workspaces/VAT-Processing/Duration_Slices/5"

@@ -42,7 +42,7 @@ def process_files(input_folder, output_folder):
 
 # Process the positive and negative examples
 # Pos path
-process_files("/workspaces/VAT-Processing/Duration_Slices/80/Pos", "/workspaces/VAT-Processing/ML/Pos/80")
+process_files("/workspaces/VAT-Processing/Duration_Slices/75/Pos", "/workspaces/VAT-Processing/ML/Pos/75")
 # Neg path
-process_files("/workspaces/VAT-Processing/Duration_Slices/80/Neg", "/workspaces/VAT-Processing/ML/Neg/80")
+process_files("/workspaces/VAT-Processing/Duration_Slices/75/Neg", "/workspaces/VAT-Processing/ML/Neg/75")
 

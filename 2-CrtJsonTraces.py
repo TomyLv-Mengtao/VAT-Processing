@@ -15,14 +15,6 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 ############## Attetnion!
 # notice the length of the dwell slices
 ############## Attetnion!
-# # 20 Sec
-# # Define the path of reading files
-# pos_path = "/workspaces/VAT-Processing/Duration_Slices/20/Pos"
-# neg_path = "/workspaces/VAT-Processing/Duration_Slices/20/Neg"
-
-# # Define the path of saving files
-# pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/20"
-# neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/20"
 
 # # 15 Sec
 # pos_path = "/workspaces/VAT-Processing/Duration_Slices/15/Pos"
@@ -31,21 +23,7 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 # pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/15"
 # neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/15"
 
-# # 10 Sec
-# pos_path = "/workspaces/VAT-Processing/Duration_Slices/10/Pos"
-# neg_path = "/workspaces/VAT-Processing/Duration_Slices/10/Neg"
-
-# pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/10"
-# neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/10"
-
-# # 5 Sec
-# pos_path = "/workspaces/VAT-Processing/Duration_Slices/5/Pos"
-# neg_path = "/workspaces/VAT-Processing/Duration_Slices/5/Neg"
-
-# pos_save_path = "/workspaces/VAT-Processing/Traces/Pos/5"
-# neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/5"
-
-# 80 Sec
+# 5 Sec
 pos_path = "/workspaces/VAT-Processing/Duration_Slices/5/Pos"
 neg_path = "/workspaces/VAT-Processing/Duration_Slices/5/Neg"
 

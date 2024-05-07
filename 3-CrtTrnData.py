@@ -9,25 +9,6 @@ import json
 import random
 
 # Define the paths
-# # 20 Sec
-# pos_path = '/workspaces/VAT-Processing/Traces/Pos/20'
-# neg_path = '/workspaces/VAT-Processing/Traces/Neg/20'
-# output_path = '/workspaces/VAT-Processing/Training_Set/20'
-
-# # 15 Sec
-# pos_path = '/workspaces/VAT-Processing/Traces/Pos/15'
-# neg_path = '/workspaces/VAT-Processing/Traces/Neg/15'
-# output_path = '/workspaces/VAT-Processing/Training_Set/15'
-
-# # 10 Sec
-# pos_path = '/workspaces/VAT-Processing/Traces/Pos/10'
-# neg_path = '/workspaces/VAT-Processing/Traces/Neg/10'
-# output_path = '/workspaces/VAT-Processing/Training_Set/10'
-
-# # 5 Sec
-# pos_path = '/workspaces/VAT-Processing/Traces/Pos/5'
-# neg_path = '/workspaces/VAT-Processing/Traces/Neg/5'
-# output_path = '/workspaces/VAT-Processing/5Sec/9-1'
 
 # 35 Sec
 pos_path = '/workspaces/VAT-Processing/Traces/Pos/35'

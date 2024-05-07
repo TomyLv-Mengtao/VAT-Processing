@@ -10,8 +10,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.neural_network import MLPClassifier
 
 # Load data
-pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/50/*.csv")
-neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/50/*.csv")
+pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/75/*.csv")
+neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/75/*.csv")
 print("Duration: 5")
 
 pos_data = [pd.read_csv(file) for file in pos_files]
