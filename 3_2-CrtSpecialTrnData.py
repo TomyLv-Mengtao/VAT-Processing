@@ -10,9 +10,9 @@ import random
 
 # Define the paths
 ######### Caution the time setting
-pos_path = '/workspaces/VAT-Processing/Ln/Pos/5'
-neg_path = '/workspaces/VAT-Processing/Ln/Neg/5'
-output_path = '/workspaces/VAT-Processing/Ln/TrainSet/5'
+pos_path = '/workspaces/VAT-Processing/GMM/Pos/80'
+neg_path = '/workspaces/VAT-Processing/GMM/Neg/80'
+output_path = '/workspaces/VAT-Processing/GMM/TrainSet/80'
 # output_path = '/workspaces/VAT-Processing/5Sec/All-1'
 
 
