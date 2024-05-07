@@ -46,11 +46,11 @@ folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 # neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/5"
 
 # 80 Sec
-pos_path = "/workspaces/VAT-Processing/Duration_Slices/80/Pos"
-neg_path = "/workspaces/VAT-Processing/Duration_Slices/80/Neg"
+pos_path = "/workspaces/VAT-Processing/Duration_Slices/5/Pos"
+neg_path = "/workspaces/VAT-Processing/Duration_Slices/5/Neg"
 
-pos_save_path = "/workspaces/VAT-Processing/GMM/Pos/80"
-neg_save_path = "/workspaces/VAT-Processing/GMM/Neg/80"
+pos_save_path = "/workspaces/VAT-Processing/K-Means/Pos/5"
+neg_save_path = "/workspaces/VAT-Processing/K-Means/Neg/5"
 
 
 # Get a list of all files in the directory
@@ -101,34 +101,34 @@ def process_file(file, path, save_path, key):
     #     else:
     #         second_value = 'e'
     
-    # By GMM (Gaussian mixture model): 100, 525.6; 1728.5; 5832.5   
-    # GMM
-    for _, row in df.iterrows():
-        # Determine the second value based on the duration
-        if row['duration'] < 100:
-            second_value = 'a'
-        elif row['duration'] < 525.6:
-            second_value = 'b'
-        elif row['duration'] < 1728.5:
-            second_value = 'c'
-        elif row['duration'] < 5832.5:
-            second_value = 'd'
-        else:
-            second_value = 'e'
-            
-    # # By K-Means: 100, 1734, 6011, 17531     
-    # # K-Means
+    # # By GMM (Gaussian mixture model): 100, 525.6; 1728.5; 5832.5   
+    # # GMM
     # for _, row in df.iterrows():
     #     # Determine the second value based on the duration
     #     if row['duration'] < 100:
     #         second_value = 'a'
-    #     elif row['duration'] < 1735:
+    #     elif row['duration'] < 525.6:
     #         second_value = 'b'
-    #     elif row['duration'] < 6012:
+    #     elif row['duration'] < 1728.5:
     #         second_value = 'c'
-    #     elif row['duration'] < 17532:
+    #     elif row['duration'] < 5832.5:
     #         second_value = 'd'
     #     else:
+    #         second_value = 'e'
+            
+    # By K-Means: 100, 1734, 6011, 17531     
+    # K-Means
+    for _, row in df.iterrows():
+        # Determine the second value based on the duration
+        if row['duration'] < 100:
+            second_value = 'a'
+        elif row['duration'] < 1735:
+            second_value = 'b'
+        elif row['duration'] < 6012:
+            second_value = 'c'
+        elif row['duration'] < 17532:
+            second_value = 'd'
+        else:
             second_value = 'e'
 
         
