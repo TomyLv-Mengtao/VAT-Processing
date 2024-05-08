@@ -10,7 +10,7 @@ import random
 
 
 # Step 1: Load the files
-folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
+# folder_path = "/workspaces/VAT-Processing/Original Sample (40)"
 
 ############## Attetnion!
 # notice the length of the dwell slices
