@@ -27,8 +27,8 @@ import random
 pos_path = "/workspaces/VAT-Processing/Duration_Slices/10/Pos"
 neg_path = "/workspaces/VAT-Processing/Duration_Slices/10/Neg"
 
-pos_save_path = "/workspaces/VAT-Processing/K-Means/Pos/10"
-neg_save_path = "/workspaces/VAT-Processing/K-Means/Neg/10"
+pos_save_path = "/workspaces/VAT-Processing/GMM/Pos/10"
+neg_save_path = "/workspaces/VAT-Processing/GMM/Neg/10"
 
 
 # Get a list of all files in the directory
@@ -79,35 +79,35 @@ def process_file(file, path, save_path, key):
     #     else:
     #         second_value = 'e'
     
-    # # By GMM (Gaussian mixture model): 100, 525.6; 1728.5; 5832.5   
-    # # GMM
-    # for _, row in df.iterrows():
-    #     # Determine the second value based on the duration
-    #     if row['duration'] < 100:
-    #         second_value = 'a'
-    #     elif row['duration'] < 525.6:
-    #         second_value = 'b'
-    #     elif row['duration'] < 1728.5:
-    #         second_value = 'c'
-    #     elif row['duration'] < 5832.5:
-    #         second_value = 'd'
-    #     else:
-    #         second_value = 'e'
-            
-    # By K-Means: 100, 1734, 6011, 17531     
-    # K-Means
+    # By GMM (Gaussian mixture model): 100, 525.6; 1728.5; 5832.5   
+    # GMM
     for _, row in df.iterrows():
         # Determine the second value based on the duration
         if row['duration'] < 100:
             second_value = 'a'
-        elif row['duration'] < 1735:
+        elif row['duration'] < 525.6:
             second_value = 'b'
-        elif row['duration'] < 6012:
+        elif row['duration'] < 1728.5:
             second_value = 'c'
-        elif row['duration'] < 17532:
+        elif row['duration'] < 5832.5:
             second_value = 'd'
         else:
             second_value = 'e'
+            
+    # # By K-Means: 100, 1734, 6011, 17531     
+    # # K-Means
+    # for _, row in df.iterrows():
+    #     # Determine the second value based on the duration
+    #     if row['duration'] < 100:
+    #         second_value = 'a'
+    #     elif row['duration'] < 1735:
+    #         second_value = 'b'
+    #     elif row['duration'] < 6012:
+    #         second_value = 'c'
+    #     elif row['duration'] < 17532:
+    #         second_value = 'd'
+    #     else:
+    #         second_value = 'e'
 
         
         # Add the dwell and its second value to the results list
