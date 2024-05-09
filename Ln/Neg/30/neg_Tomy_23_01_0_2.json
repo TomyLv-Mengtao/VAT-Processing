@@ -1,1 +1,1 @@
-{"traces_neg": [["alt", "e"], ["nos", "e"], ["oth", "b"], ["alt", "e"], ["otw", "e"], ["nos", "b"], ["otw", "e"], ["alt", "c"], ["att", "e"], ["spd", "d"], ["vsp", "c"], ["otw", "e"], ["oth", "b"], ["att", "e"], ["alt", "e"], ["nos", "e"], ["oth", "c"], ["otw", "e"], ["nos", "d"]]}
+{"traces_neg": [["alt", "d"], ["nos", "e"], ["oth", "b"], ["alt", "d"], ["otw", "e"], ["nos", "b"], ["otw", "d"], ["alt", "c"], ["att", "d"], ["spd", "c"], ["vsp", "c"], ["otw", "e"], ["oth", "b"], ["att", "d"], ["alt", "e"], ["nos", "e"], ["oth", "c"], ["otw", "e"], ["nos", "d"]]}

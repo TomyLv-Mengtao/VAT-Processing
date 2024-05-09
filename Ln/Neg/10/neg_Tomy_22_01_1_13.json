@@ -1,1 +1,1 @@
-{"traces_neg": [["vsp", "c"], ["att", "d"], ["nos", "d"], ["otw", "d"], ["nos", "c"], ["att", "d"], ["nos", "d"], ["otw", "c"], ["nos", "d"], ["otw", "b"], ["nos", "d"], ["otw", "c"], ["nos", "d"], ["att", "c"], ["oth", "b"], ["nos", "b"], ["oth", "d"]]}
+{"traces_neg": [["vsp", "c"], ["att", "c"], ["nos", "c"], ["otw", "c"], ["nos", "c"], ["att", "c"], ["nos", "c"], ["otw", "c"], ["nos", "d"], ["otw", "b"], ["nos", "d"], ["otw", "c"], ["nos", "c"], ["att", "c"], ["oth", "b"], ["nos", "b"], ["oth", "d"]]}

@@ -27,8 +27,8 @@ import random
 pos_path = "/workspaces/VAT-Processing/Duration_Slices/10/Pos"
 neg_path = "/workspaces/VAT-Processing/Duration_Slices/10/Neg"
 
-pos_save_path = "/workspaces/VAT-Processing/Ln/Pos/10"
-neg_save_path = "/workspaces/VAT-Processing/Ln/Neg/10"
+pos_save_path = "/workspaces/VAT-Processing/Training_Set/Pos/10"
+neg_save_path = "/workspaces/VAT-Processing/Training_Set/Neg/10"
 
 
 # Get a list of all files in the directory

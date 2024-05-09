@@ -1,1 +1,1 @@
-{"traces_neg": [["alt", "b"], ["oth", "b"], ["alt", "d"], ["nos", "c"], ["otw", "e"], ["att", "d"], ["otw", "e"], ["nos", "e"], ["otw", "d"], ["nos", "c"], ["att", "e"], ["otw", "e"]]}
+{"traces_neg": [["alt", "b"], ["oth", "b"], ["alt", "c"], ["nos", "c"], ["otw", "d"], ["att", "d"], ["otw", "e"], ["nos", "d"], ["otw", "d"], ["nos", "c"], ["att", "e"], ["otw", "e"]]}
