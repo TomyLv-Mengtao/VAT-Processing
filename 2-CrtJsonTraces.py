@@ -24,11 +24,11 @@ import random
 # neg_save_path = "/workspaces/VAT-Processing/Traces/Neg/15"
 
 # 5 Sec
-pos_path = "/workspaces/VAT-Processing/Duration_Slices/35/Pos"
-neg_path = "/workspaces/VAT-Processing/Duration_Slices/35/Neg"
+pos_path = "/workspaces/VAT-Processing/Duration_Slices/10/Pos"
+neg_path = "/workspaces/VAT-Processing/Duration_Slices/10/Neg"
 
-pos_save_path = "/workspaces/VAT-Processing/K-Means/Pos/35"
-neg_save_path = "/workspaces/VAT-Processing/K-Means/Neg/35"
+pos_save_path = "/workspaces/VAT-Processing/K-Means/Pos/10"
+neg_save_path = "/workspaces/VAT-Processing/K-Means/Neg/10"
 
 
 # Get a list of all files in the directory

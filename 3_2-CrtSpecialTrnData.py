@@ -10,9 +10,9 @@ import random
 
 # Define the paths
 ######### Caution the time setting
-pos_path = '/workspaces/VAT-Processing/K-Means/Pos/10'
-neg_path = '/workspaces/VAT-Processing/K-Means/Neg/10'
-output_path = '/workspaces/VAT-Processing/K-Means/TrainSet/10'
+pos_path = '/workspaces/VAT-Processing/K-Means/Pos/35'
+neg_path = '/workspaces/VAT-Processing/K-Means/Neg/35'
+output_path = '/workspaces/VAT-Processing/K-Means/TrainSet/35'
 # output_path = '/workspaces/VAT-Processing/5Sec/All-1'
 
 
