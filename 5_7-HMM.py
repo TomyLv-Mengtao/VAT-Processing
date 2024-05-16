@@ -1,69 +1,75 @@
-# Step 5. method 7, Evaluate the performance of VAT with HMM
-# 2024-05-16
-import glob
-import pandas as pd
+import os
 import numpy as np
-from sklearn.model_selection import cross_val_score, KFold, StratifiedKFold
-from sklearn.metrics import accuracy_score, precision_score, recall_score
+import pandas as pd
 from hmmlearn import hmm
+from sklearn.model_selection import KFold
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 
-# Load data
-pos_files = glob.glob("/workspaces/VAT-Processing/ML/Pos/10/*.csv")
-neg_files = glob.glob("/workspaces/VAT-Processing/ML/Neg/10/*.csv")
+# Paths to positive and negative trace folders
+pos_trace_path = "/workspaces/VAT-Processing/Duration_Slices/75/Pos"
+neg_trace_path = "/workspaces/VAT-Processing/Duration_Slices/75/Neg"
 
-pos_data = [pd.read_csv(file) for file in pos_files]
-neg_data = [pd.read_csv(file) for file in neg_files]
+# Mapping AOI names to integers
+aoi_mapping = {"alt": 0, "att": 1, "spd": 2, "vsp": 3, "otw": 4, "nos": 5, "oth": 6}
 
-# Concatenate all data into one DataFrame
-pos_df = pd.concat(pos_data, ignore_index=True)
-neg_df = pd.concat(neg_data, ignore_index=True)
+# Function to load traces from a given directory
+def load_traces(trace_path):
+    traces = []
+    for filename in os.listdir(trace_path):
+        if filename.endswith('.xlsx'):
+            df = pd.read_excel(os.path.join(trace_path, filename), header=None, skiprows=1)
+            # Ensure the first column is mapped and the second column is float
+            df[0] = df[0].map(aoi_mapping)
+            df[1] = pd.to_numeric(df[1], errors='coerce')
+            df = df.dropna()  # Drop rows with NaN values
+            traces.append(df.values)
+    return traces
 
-# Add labels
-pos_df['label'] = 1
-neg_df['label'] = 0
+# Load positive and negative traces
+pos_traces = load_traces(pos_trace_path)
+neg_traces = load_traces(neg_trace_path)
 
-# Combine positive and negative examples
-data = pd.concat([pos_df, neg_df], ignore_index=True)
+# Combine positive and negative traces, and create labels
+all_traces = pos_traces + neg_traces
+labels = np.array([1] * len(pos_traces) + [0] * len(neg_traces))
 
-# Convert object columns to int, else will be object type error, 02-07
-for col in ["duration", "dwell_alt", "dwell_att", "dwell_spd", "dwell_vsp", "dwell_otw", "dwell_nos", "dwell_oth"]:
-    data[col] = pd.to_numeric(data[col], errors='coerce').fillna(0).astype(int)
+# Convert traces to sequences for HMM
+lengths = [len(trace) for trace in all_traces]
+all_sequences = np.concatenate(all_traces)
 
-# Prepare features and target variable
-X = data.drop('label', axis=1)
-y = data['label']
+# Perform 10-fold cross-validation
+kf = KFold(n_splits=10, shuffle=True, random_state=42)
+accuracies = []
+precisions = []
+recalls = []
 
-# Initialize the classifier
-n_components = 2  # Number of states in the HMM
-clf = hmm.GaussianHMM(n_components=n_components, covariance_type="diag", n_iter=100)
-
-# Initialize StratifiedKFold for cross-validation
-skf = StratifiedKFold(n_splits=10)
-
-# Perform cross-validation and compute metrics
-accuracy = []
-precision = []
-recall = []
-
-for train_index, test_index in skf.split(X, y):
-    X_train, X_test = X.iloc[train_index], X.iloc[test_index]
-    y_train, y_test = y.iloc[train_index], y.iloc[test_index]
+for train_index, test_index in kf.split(all_traces):
+    # Prepare training data
+    train_sequences = np.concatenate([all_traces[i] for i in train_index])
+    train_lengths = [len(all_traces[i]) for i in train_index]
+    train_labels = labels[train_index]
     
-    # Train HMM on positive and negative sequences separately
-    clf_pos = clf.fit(X_train[y_train == 1])
-    clf_neg = clf.fit(X_train[y_train == 0])
+    # Prepare test data
+    test_sequences = np.concatenate([all_traces[i] for i in test_index])
+    test_lengths = [len(all_traces[i]) for i in test_index]
+    test_labels = labels[test_index]
     
-    # Predict based on log likelihood
-    log_likelihood_pos = clf_pos.score_samples(X_test)
-    log_likelihood_neg = clf_neg.score_samples(X_test)
+    # Train HMM
+    model = hmm.GaussianHMM(n_components=2, covariance_type="diag", n_iter=100)
+    model.fit(train_sequences, lengths=train_lengths)
     
-    predictions = (log_likelihood_pos > log_likelihood_neg).astype(int)
+    # Predict labels for test data
+    predicted_labels = []
+    for test_trace in [all_traces[i] for i in test_index]:
+        logprob, state_sequence = model.decode(test_trace)
+        predicted_labels.append(state_sequence[0])
+    
+    # Calculate metrics
+    accuracies.append(accuracy_score(test_labels, predicted_labels))
+    precisions.append(precision_score(test_labels, predicted_labels))
+    recalls.append(recall_score(test_labels, predicted_labels))
 
-    accuracy.append(accuracy_score(y_test, predictions))
-    precision.append(precision_score(y_test, predictions))
-    recall.append(recall_score(y_test, predictions))
-
-# Print the results
-print(f'Accuracy: {np.mean(accuracy):.3f}')
-print(f'Precision: {np.mean(precision):.3f}')
-print(f'Recall: {np.mean(recall):.3f}')
+# Output average accuracy, precision, and recall
+print(f"Average Accuracy: {np.mean(accuracies):.3f}")
+print(f"Average Precision: {np.mean(precisions):.3f}")
+print(f"Average Recall: {np.mean(recalls):.3f}")
